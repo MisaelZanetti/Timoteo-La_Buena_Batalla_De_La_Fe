@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://n6dg7dolieyi"]
+
+[ext_resource type="Texture2D" uid="uid://bkdh35yhljdam" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/coin_.png" id="1_jxero"]
+[ext_resource type="Script" uid="uid://by7tkm28q08do" path="res://Scripts/ui.gd" id="1_qdvrb"]
+[ext_resource type="PackedScene" uid="uid://76jr71hw11ia" path="res://Scenes/UI/UI Pausa.tscn" id="2_alcrr"]
+[ext_resource type="FontFile" uid="uid://bf2vv35dsod80" path="res://fonts/PressStart2P-Regular.ttf" id="3_1c2ca"]
+[ext_resource type="Texture2D" uid="uid://cdbf35w6bkq4l" path="res://assets/UI/pause.png" id="3_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://c2pws825eyw0j" path="res://assets/UI/jugar-buttton.png" id="4_2246s"]
+
+[sub_resource type="Theme" id="Theme_kulhe"]
+default_font = ExtResource("3_1c2ca")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=360279354]
+process_mode = 3
+script = ExtResource("1_qdvrb")
+
+[node name="UI Pausa" parent="." unique_id=1811382559 instance=ExtResource("2_alcrr")]
+
+[node name="Control" type="Control" parent="." unique_id=369427686]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 63.0
+theme = SubResource("Theme_kulhe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=22650825]
+position = Vector2(24, 41)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("1_jxero")
+hframes = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1724025187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 43
+theme_override_constants/margin_right = 11
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1957565659]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 365
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=247682707]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "0"
+vertical_alignment = 1
+
+[node name="Panel2" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=1644722502]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 5
+icon = ExtResource("4_2246s")
+flat = true
+icon_alignment = 1
+
+[node name="Panel" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=1083272038]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 5
+icon = ExtResource("3_nf4gj")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Panel2" to="." method="_on_panel_2_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Panel" to="." method="_on_panel_pressed"]

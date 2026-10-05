@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://n6dg7dolieyi"]
+
+[ext_resource type="Texture2D" uid="uid://bkdh35yhljdam" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/objects_/coin_.png" id="1_jxero"]
+[ext_resource type="Script" uid="uid://by7tkm28q08do" path="res://Scripts/ui.gd" id="1_qdvrb"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=360279354]
+script = ExtResource("1_qdvrb")
+
+[node name="Control" type="Control" parent="." unique_id=369427686]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1296927509]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 94.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="Node2D" type="Node2D" parent="Control" unique_id=1260011940]
+position = Vector2(26, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Node2D" unique_id=22650825]
+position = Vector2(2, 18)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("1_jxero")
+hframes = 12

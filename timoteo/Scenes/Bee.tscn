@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://0c2scf0ibcyo"]
+
+[ext_resource type="Texture2D" uid="uid://b6xnqtwu1q1go" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Bee/Bee.png" id="1_o7wem"]
+[ext_resource type="Script" uid="uid://b4si4nq657w4x" path="res://Scripts/bee.gd" id="1_ug8hw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug8hw"]
+atlas = ExtResource("1_o7wem")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtnth"]
+atlas = ExtResource("1_o7wem")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y26aa"]
+atlas = ExtResource("1_o7wem")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5fbj"]
+atlas = ExtResource("1_o7wem")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qimk1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug8hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtnth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y26aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5fbj")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7668"]
+size = Vector2(10, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxir8"]
+size = Vector2(10, 6)
+
+[node name="Bee" type="Node2D" unique_id=286707559]
+script = ExtResource("1_ug8hw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1750309047]
+sprite_frames = SubResource("SpriteFrames_qimk1")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.0171616
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1411228239]
+
+[node name="TopBee" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=910339556]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_p7668")
+
+[node name="Area2D2" type="Area2D" parent="AnimatedSprite2D" unique_id=891000467]
+
+[node name="BottomBee" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D2" unique_id=287864982]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_bxir8")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="." method="_on_area_2d_2_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c4rp3glirf8sh"]
+
+[ext_resource type="Script" uid="uid://qpetuo5x7qpm" path="res://Scripts/musica.gd" id="1_54xbp"]
+[ext_resource type="AudioStream" uid="uid://cp6fm5jbpx6u2" path="res://MusicAndSonds/Music/retrosunrise-popcorn-and-videogames-233568.mp3" id="1_xwm6m"]
+
+[node name="Musica" type="Control" unique_id=977180373]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54xbp")
+
+[node name="musix" type="AudioStreamPlayer" parent="." unique_id=53115408]
+process_mode = 3
+stream = ExtResource("1_xwm6m")
+volume_db = -10.0
+autoplay = true
+bus = &"Musica"

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://76jr71hw11ia"]
+
+[ext_resource type="Script" uid="uid://dwq2uwq0abkrf" path="res://Scripts/ui_pausa.gd" id="1_fcv7p"]
+[ext_resource type="FontFile" uid="uid://bf2vv35dsod80" path="res://fonts/PressStart2P-Regular.ttf" id="1_ifgio"]
+
+[sub_resource type="Theme" id="Theme_duuxe"]
+default_font = ExtResource("1_ifgio")
+
+[node name="UI Pausa" type="Control" unique_id=1811382559]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_duuxe")
+script = ExtResource("1_fcv7p")
+
+[node name="Panel" type="Panel" parent="." unique_id=76861197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -195.0
+offset_right = 253.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1731666538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContaine" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=806320279]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContaine" unique_id=778754388]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 40
+text = "PAUSA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContaine" unique_id=280331813]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContaine/VBoxContainer" unique_id=475180701]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContaine/VBoxContainer/MarginContainer" unique_id=825569864]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Opciones" type="Button" parent="Panel/MarginContainer/VBoxContaine/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1978130683]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 31
+text = "OPCIONES"
+
+[node name="Salir" type="Button" parent="Panel/MarginContainer/VBoxContaine/VBoxContainer/MarginContainer/VBoxContainer" unique_id=129847415]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 31
+text = "SALIR"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContaine/VBoxContainer/MarginContainer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContaine/VBoxContainer/MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

@@ -1,0 +1,283 @@
+[gd_scene format=4 uid="uid://4123jevhqtof"]
+
+[ext_resource type="FontFile" uid="uid://bf2vv35dsod80" path="res://fonts/PressStart2P-Regular.ttf" id="1_pmd43"]
+[ext_resource type="Script" uid="uid://0fgrg5lgnwbi" path="res://Scripts/opciones.gd" id="1_qdgt8"]
+[ext_resource type="Script" uid="uid://b15vghk0ly11u" path="res://Scripts/control_musica.gd" id="3_btg5x"]
+[ext_resource type="Texture2D" uid="uid://x2yia4a3hcrb" path="res://assets/Pixel Adventure 1/Background/Green.png" id="3_pmd43"]
+[ext_resource type="Script" uid="uid://yq8gvr8cbcif" path="res://Scripts/control_sfx.gd" id="5_pmd43"]
+
+[sub_resource type="Theme" id="Theme_1c2ca"]
+default_font = ExtResource("1_pmd43")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dl4p3"]
+texture = ExtResource("3_pmd43")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_riqys"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_dl4p3")
+
+[sub_resource type="GDScript" id="GDScript_pmd43"]
+script/source = "extends Button
+
+@onready var panel_volumen = $\"../../Volumen\"
+@onready var panel_otras_configuraciones = $\"../../Otros\"
+
+func _on_pressed() -> void:
+	panel_volumen.visible = true
+	panel_otras_configuraciones.visible = false
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqys"]
+bg_color = Color(0.011764706, 0.011764706, 0.011764706, 0.7254902)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6k6tj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcb4n"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdchk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug1iu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Opciones" type="Control" unique_id=1357019097]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1c2ca")
+script = ExtResource("1_qdgt8")
+
+[node name="TextureRect" type="TileMapLayer" parent="." unique_id=1346574163]
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAP//AAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAP//AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAALAP//AAAAAAAAAAALAAAAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAAMAP//AAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAANAP//AAAAAAAAAAANAAAAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAAAAAAOAP//AAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAP//AAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAP//AAAAAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAARAP//AAAAAAAAAAARAAAAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAASAP//AAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_riqys")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=696375347]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -141.0
+offset_right = -128.53784
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="Volumen" type="Button" parent="VBoxContainer" unique_id=1831192115]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "VOLUMEN"
+script = SubResource("GDScript_pmd43")
+
+[node name="Otros" type="Button" parent="VBoxContainer" unique_id=1704648156]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "OTROS"
+
+[node name="Atras" type="Button" parent="VBoxContainer" unique_id=401261545]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "ATRAS"
+
+[node name="Volumen" type="Panel" parent="." unique_id=2116286851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 496.0
+offset_top = 244.0
+offset_right = -112.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_riqys")
+
+[node name="MarginContainer" type="MarginContainer" parent="Volumen" unique_id=1964147898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Volumen/MarginContainer" unique_id=1322459998]
+propagate_maximum_size = false
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Volumen/MarginContainer/VBoxContainer2" unique_id=161755488]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Configuracion de volumen"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Volumen/MarginContainer/VBoxContainer2" unique_id=459991423]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3" unique_id=409788366]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer" unique_id=1927343095]
+layout_mode = 2
+
+[node name="Musica" type="Label" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer" unique_id=996759178]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Musica"
+
+[node name="MarginContainer" type="MarginContainer" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer" unique_id=2009978864]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ControlMusica" type="HSlider" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer/MarginContainer" unique_id=297012604]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_6k6tj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_lcb4n")
+min_value = -30.0
+max_value = 30.0
+step = 0.1
+script = ExtResource("3_btg5x")
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer" unique_id=1587095984]
+layout_mode = 2
+
+[node name="Efectos" type="Label" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer2" unique_id=1822018344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SFX"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer2" unique_id=1120420074]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ControlSFX" type="HSlider" parent="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer2/MarginContainer2" unique_id=524059808]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_rdchk")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ug1iu")
+min_value = -30.0
+max_value = 30.0
+step = 0.001
+script = ExtResource("5_pmd43")
+
+[node name="Otros" type="Panel" parent="." unique_id=452181650]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 496.0
+offset_top = 244.0
+offset_right = -112.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_riqys")
+
+[node name="MarginContainer" type="MarginContainer" parent="Otros" unique_id=1035527074]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Otros/MarginContainer" unique_id=818193100]
+propagate_maximum_size = false
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Otros/MarginContainer/VBoxContainer2" unique_id=1224450693]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Otras configuraciones"
+
+[connection signal="pressed" from="VBoxContainer/Volumen" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Volumen" to="VBoxContainer/Volumen" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Otros" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Atras" to="." method="_on_atras_pressed"]
+[connection signal="value_changed" from="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer/MarginContainer/ControlMusica" to="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer/MarginContainer/ControlMusica" method="_on_value_changed"]
+[connection signal="value_changed" from="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer2/MarginContainer2/ControlSFX" to="Volumen/MarginContainer/VBoxContainer2/MarginContainer3/VBoxContainer/VBoxContainer2/MarginContainer2/ControlSFX" method="_on_value_changed"]

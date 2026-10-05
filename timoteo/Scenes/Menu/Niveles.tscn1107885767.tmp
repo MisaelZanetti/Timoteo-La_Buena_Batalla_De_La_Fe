@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://s2hmtm11fci"]
+
+[ext_resource type="Script" uid="uid://dbonxtb1shyvj" path="res://Scripts/niveles.gd" id="1_b807c"]
+
+[node name="Niveles" type="Control" unique_id=868175458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b807c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=667410251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1247515418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=1934448784]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2" unique_id=1250802888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "NIVELES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer2" unique_id=247981255]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=259752884]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1834609915]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button" unique_id=120155250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1199446565]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button2" unique_id=1514522855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=2064940188]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button3" unique_id=960603684]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1503897652]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button4" unique_id=430589594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1327480442]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button5" unique_id=914500708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button6" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=672662145]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button6" unique_id=1508162396]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1094564235]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=713254516]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Button" unique_id=506635752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=858324117]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Button2" unique_id=864359945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=508210483]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Button3" unique_id=605395354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1457529805]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Button4" unique_id=182005289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=314415152]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Button5" unique_id=668218265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button6" type="Button" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=701115205]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Button6" unique_id=1907291217]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
