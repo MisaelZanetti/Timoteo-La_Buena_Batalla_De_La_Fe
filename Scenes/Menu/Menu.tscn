@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de84ugd2ltmm2" path="res://Scripts/menu.gd" id="1_6pedr"]
 [ext_resource type="FontFile" uid="uid://bf2vv35dsod80" path="res://fonts/PressStart2P-Regular.ttf" id="1_kqkty"]
-[ext_resource type="Texture2D" uid="uid://b4qalvswusv73" path="res://assets/Pixel Adventure 1/Background/Blue.png" id="2_kqkty"]
+[ext_resource type="Texture2D" uid="uid://h84kfkcllxuw" path="res://assets/Pixel Adventure 1/Background/Blue.png" id="2_kqkty"]
 [ext_resource type="Script" uid="uid://t5b7772j5vxi" path="res://Scripts/Animacion.gd" id="4_47xui"]
 
 [sub_resource type="Theme" id="Theme_bhunq"]
@@ -119,6 +119,7 @@ text = "SALIR
 "
 
 [node name="Sprite2D" type="ColorRect" parent="." unique_id=28796255]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
