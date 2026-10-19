@@ -439,7 +439,7 @@ position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_3jci0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=294076946]
-position = Vector2(0, -43)
+position = Vector2(0, -34)
 zoom = Vector2(3.5, 3.5)
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=1002173224]
