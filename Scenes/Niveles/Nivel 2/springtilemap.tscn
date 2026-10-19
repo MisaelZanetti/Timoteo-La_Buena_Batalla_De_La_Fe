@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://kdp01ydo64t2"]
 
-[ext_resource type="Texture2D" uid="uid://c77fdbxpadltu" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/spring_.png" id="1_501n0"]
-[ext_resource type="Texture2D" uid="uid://vuu4s16h33d1" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/staticObjects_.png" id="2_gu4h0"]
-[ext_resource type="Texture2D" uid="uid://bw62dufbjb5lo" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="3_uwmb2"]
-[ext_resource type="PackedScene" uid="uid://n6dg7dolieyi" path="res://Scenes/UI/ui.tscn" id="4_ii1ms"]
-[ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="5_lk5v3"]
-[ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="6_bs32s"]
-[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 1/Enemigos/Slime Azul.tscn" id="6_gu4h0"]
+[ext_resource type="Texture2D" uid="uid://c77fdbxpadltu" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/spring_.png" id="1_23ns2"]
+[ext_resource type="Texture2D" uid="uid://vuu4s16h33d1" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/staticObjects_.png" id="2_qe7er"]
+[ext_resource type="Texture2D" uid="uid://bw62dufbjb5lo" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="3_jaotg"]
+[ext_resource type="PackedScene" uid="uid://n6dg7dolieyi" path="res://Scenes/UI/ui.tscn" id="4_clsgn"]
+[ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="5_g1h24"]
+[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Azul.tscn" id="6_1se6r"]
+[ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="7_cdotj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roj4e"]
-texture = ExtResource("1_501n0")
+texture = ExtResource("1_23ns2")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -1.026186, -8, -1.0506563)
 1:0/0 = 0
@@ -406,7 +406,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_roj4e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ws1hi"]
-texture = ExtResource("2_gu4h0")
+texture = ExtResource("2_qe7er")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -559,7 +559,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ws1hi")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngcqm"]
-texture = ExtResource("3_uwmb2")
+texture = ExtResource("3_jaotg")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -610,18 +610,18 @@ tile_set = SubResource("TileSet_sn0t7")
 z_index = -1
 tile_set = SubResource("TileSet_riqys")
 
-[node name="CanvasLayer" parent="." unique_id=360279354 instance=ExtResource("4_ii1ms")]
+[node name="CanvasLayer" parent="." unique_id=360279354 instance=ExtResource("4_clsgn")]
 visible = false
 
-[node name="Killzone" parent="." unique_id=1399434472 instance=ExtResource("5_lk5v3")]
+[node name="Killzone" parent="." unique_id=1399434472 instance=ExtResource("5_g1h24")]
 position = Vector2(8198, 239)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=177268475]
 position = Vector2(-7555, 836)
 shape = SubResource("RectangleShape2D_ancuo")
 
-[node name="Slime Azul" parent="." unique_id=788201775 instance=ExtResource("6_gu4h0")]
+[node name="Slime Azul" parent="." unique_id=788201775 instance=ExtResource("6_1se6r")]
 position = Vector2(681, 383)
 
-[node name="Player" parent="." unique_id=1318641805 instance=ExtResource("6_bs32s")]
+[node name="Player" parent="." unique_id=1318641805 instance=ExtResource("7_cdotj")]
 position = Vector2(598, 349)
