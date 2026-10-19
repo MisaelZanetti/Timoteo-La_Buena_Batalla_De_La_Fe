@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bw62dufbjb5lo" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="3_uwmb2"]
 [ext_resource type="PackedScene" uid="uid://n6dg7dolieyi" path="res://Scenes/UI/ui.tscn" id="4_ii1ms"]
 [ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="5_lk5v3"]
+[ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="6_bs32s"]
+[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 1/Enemigos/Slime Azul.tscn" id="6_gu4h0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roj4e"]
 texture = ExtResource("1_501n0")
@@ -617,3 +619,9 @@ position = Vector2(8198, 239)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=177268475]
 position = Vector2(-7555, 836)
 shape = SubResource("RectangleShape2D_ancuo")
+
+[node name="Slime Azul" parent="." unique_id=788201775 instance=ExtResource("6_gu4h0")]
+position = Vector2(681, 383)
+
+[node name="Player" parent="." unique_id=1318641805 instance=ExtResource("6_bs32s")]
+position = Vector2(598, 349)
