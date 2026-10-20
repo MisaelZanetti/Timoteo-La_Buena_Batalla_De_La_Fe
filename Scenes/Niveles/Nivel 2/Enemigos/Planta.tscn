@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0852u0y81hrr"]
 
-[ext_resource type="Script" uid="uid://du4bqc78qii2n" path="res://Scripts/Enemigos/slime_azul.gd" id="1_kwk88"]
+[ext_resource type="Script" uid="uid://1wvr1rjqcqd0" path="res://Scripts/Enemigos/planta.gd" id="1_5unrl"]
 [ext_resource type="Texture2D" uid="uid://cd70tcw5v6gfn" path="res://assets/Enemigos/Plent/Attack_1.png" id="2_ywgxl"]
 [ext_resource type="Texture2D" uid="uid://dlmijrcxjac7o" path="res://assets/Enemigos/Plent/Attack_2.png" id="3_7u8kj"]
 [ext_resource type="Texture2D" uid="uid://dnxgcjospo7p1" path="res://assets/Enemigos/Plent/Attack_3.png" id="4_pyp3g"]
@@ -200,7 +200,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Attack 3",
-"speed": 7.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -255,8 +255,8 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="Plent" type="CharacterBody2D" unique_id=788201775]
-script = ExtResource("1_kwk88")
+[node name="Planta" type="CharacterBody2D" unique_id=788201775]
+script = ExtResource("1_5unrl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=495513748]
 position = Vector2(0, -8)
@@ -266,9 +266,9 @@ shape = SubResource("CircleShape2D_nxsiv")
 position = Vector2(0.9999999, -22)
 scale = Vector2(0.34375, 0.34375)
 sprite_frames = SubResource("SpriteFrames_ancuo")
-animation = &"Attack 1"
+animation = &"Attack 3"
 autoplay = "Idle"
-frame_progress = 0.04491455
+frame_progress = 0.90645915
 
 [node name="Atencion Izq" type="RayCast2D" parent="." unique_id=1496956269]
 position = Vector2(0, -8)

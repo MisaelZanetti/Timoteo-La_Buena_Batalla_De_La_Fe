@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="7_he3l8"]
 [ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Azul.tscn" id="8_qoau7"]
 [ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="9_t4gm2"]
+[ext_resource type="PackedScene" uid="uid://b0852u0y81hrr" path="res://Scenes/Niveles/Nivel 2/Enemigos/Planta.tscn" id="10_hn5em"]
+[ext_resource type="PackedScene" uid="uid://dg3dhkvir56u1" path="res://Scenes/Niveles/Nivel 2/Enemigos/Esqueleto.tscn" id="11_4i430"]
+[ext_resource type="Script" uid="uid://dcwdfusk1vcw6" path="res://Scripts/Enemigos/esqueleto.gd" id="11_kus2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roj4e"]
 texture = ExtResource("1_lws3s")
@@ -1603,3 +1606,10 @@ position = Vector2(681, 383)
 
 [node name="Player" parent="." unique_id=1318641805 instance=ExtResource("9_t4gm2")]
 position = Vector2(598, 349)
+
+[node name="Esqueleto" parent="." unique_id=821225254 instance=ExtResource("11_4i430")]
+position = Vector2(828, 354)
+script = ExtResource("11_kus2o")
+
+[node name="Planta" parent="." unique_id=1505840794 instance=ExtResource("10_hn5em")]
+position = Vector2(470, 334)
