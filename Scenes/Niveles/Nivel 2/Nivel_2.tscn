@@ -1,21 +1,21 @@
 [gd_scene format=4 uid="uid://kdp01ydo64t2"]
 
-[ext_resource type="Texture2D" uid="uid://c77fdbxpadltu" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/spring_.png" id="1_lws3s"]
-[ext_resource type="Texture2D" uid="uid://ip8statfy542" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/summer_.png" id="2_hn5em"]
-[ext_resource type="Texture2D" uid="uid://exva5j3k6rou" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/winter_.png" id="3_4i430"]
-[ext_resource type="Texture2D" uid="uid://vuu4s16h33d1" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/staticObjects_.png" id="4_kus2o"]
-[ext_resource type="Texture2D" uid="uid://bw62dufbjb5lo" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="5_5aw23"]
-[ext_resource type="PackedScene" uid="uid://n6dg7dolieyi" path="res://Scenes/UI/ui.tscn" id="6_2qorj"]
-[ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="7_he3l8"]
-[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Azul.tscn" id="8_qoau7"]
-[ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="9_t4gm2"]
-[ext_resource type="PackedScene" uid="uid://b0852u0y81hrr" path="res://Scenes/Niveles/Nivel 2/Enemigos/Planta.tscn" id="10_hn5em"]
-[ext_resource type="PackedScene" uid="uid://dg3dhkvir56u1" path="res://Scenes/Niveles/Nivel 2/Enemigos/Esqueleto.tscn" id="11_4i430"]
-[ext_resource type="Script" uid="uid://dcwdfusk1vcw6" path="res://Scripts/Enemigos/esqueleto.gd" id="11_kus2o"]
-[ext_resource type="PackedScene" uid="uid://d1xn01kfoqbnj" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Esqueletico.tscn" id="13_5aw23"]
+[ext_resource type="Texture2D" uid="uid://clwseojlvno7x" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/spring_.png" id="1_gfmvy"]
+[ext_resource type="Texture2D" uid="uid://md8u8thactl6" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/summer_.png" id="2_235kx"]
+[ext_resource type="Texture2D" uid="uid://dx8nwhwiaebnm" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/winter_.png" id="3_7okg7"]
+[ext_resource type="Texture2D" uid="uid://qar3kui46jyn" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/staticObjects_.png" id="4_g0ca7"]
+[ext_resource type="Texture2D" uid="uid://x045pefnojla" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="5_0867n"]
+[ext_resource type="PackedScene" uid="uid://n6dg7dolieyi" path="res://Scenes/UI/ui.tscn" id="6_6fklt"]
+[ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="7_mccfy"]
+[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Azul.tscn" id="8_3kpu1"]
+[ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="9_6bk4p"]
+[ext_resource type="PackedScene" uid="uid://dg3dhkvir56u1" path="res://Scenes/Niveles/Nivel 2/Enemigos/Esqueleto.tscn" id="10_7ivs5"]
+[ext_resource type="Script" uid="uid://dcwdfusk1vcw6" path="res://Scripts/Enemigos/esqueleto.gd" id="11_iu8dg"]
+[ext_resource type="PackedScene" uid="uid://b0852u0y81hrr" path="res://Scenes/Niveles/Nivel 2/Enemigos/Planta.tscn" id="12_jqwql"]
+[ext_resource type="PackedScene" uid="uid://d1xn01kfoqbnj" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Esqueletico.tscn" id="13_7ey2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roj4e"]
-texture = ExtResource("1_lws3s")
+texture = ExtResource("1_gfmvy")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -1.026186, -8, -1.0506563)
 1:0/0 = 0
@@ -412,7 +412,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_roj4e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a7u4"]
-texture = ExtResource("2_hn5em")
+texture = ExtResource("2_235kx")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.78346443, 8, -0.9575672, 8, 8, -8, 8)
 1:0/0 = 0
@@ -959,7 +959,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2a7u4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_di3rv"]
-texture = ExtResource("3_4i430")
+texture = ExtResource("3_7okg7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1380,7 +1380,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_di3rv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ws1hi"]
-texture = ExtResource("4_kus2o")
+texture = ExtResource("4_g0ca7")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -1533,7 +1533,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ws1hi")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngcqm"]
-texture = ExtResource("5_5aw23")
+texture = ExtResource("5_0867n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1592,28 +1592,28 @@ tile_set = SubResource("TileSet_sn0t7")
 z_index = -1
 tile_set = SubResource("TileSet_riqys")
 
-[node name="CanvasLayer" parent="." unique_id=360279354 instance=ExtResource("6_2qorj")]
+[node name="CanvasLayer" parent="." unique_id=360279354 instance=ExtResource("6_6fklt")]
 visible = false
 
-[node name="Killzone" parent="." unique_id=1399434472 instance=ExtResource("7_he3l8")]
+[node name="Killzone" parent="." unique_id=1399434472 instance=ExtResource("7_mccfy")]
 position = Vector2(8198, 239)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=177268475]
 position = Vector2(-7551.375, 269.1875)
 shape = SubResource("RectangleShape2D_ancuo")
 
-[node name="Slime Azul" parent="." unique_id=788201775 instance=ExtResource("8_qoau7")]
+[node name="Slime Azul" parent="." unique_id=788201775 instance=ExtResource("8_3kpu1")]
 position = Vector2(681, 383)
 
-[node name="Player" parent="." unique_id=1318641805 instance=ExtResource("9_t4gm2")]
+[node name="Player" parent="." unique_id=1318641805 instance=ExtResource("9_6bk4p")]
 position = Vector2(284, 324)
 
-[node name="Esqueleto" parent="." unique_id=821225254 instance=ExtResource("11_4i430")]
+[node name="Esqueleto" parent="." unique_id=821225254 instance=ExtResource("10_7ivs5")]
 position = Vector2(828, 354)
-script = ExtResource("11_kus2o")
+script = ExtResource("11_iu8dg")
 
-[node name="Planta" parent="." unique_id=1505840794 instance=ExtResource("10_hn5em")]
+[node name="Planta" parent="." unique_id=1505840794 instance=ExtResource("12_jqwql")]
 position = Vector2(148, 335)
 
-[node name="Slime Esqueletico" parent="." unique_id=1264886114 instance=ExtResource("13_5aw23")]
+[node name="Slime Esqueletico" parent="." unique_id=1264886114 instance=ExtResource("13_7ey2u")]
 position = Vector2(487, 329)

@@ -263,4 +263,5 @@ icon = ExtResource("3_7f1yk")
 flat = true
 
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Nivel1" to="." method="_on_nivel_1_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/Atras" to="." method="_on_atras_pressed"]

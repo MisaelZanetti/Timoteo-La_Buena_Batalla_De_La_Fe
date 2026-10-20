@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://kdp01ydo64t2"]
 
-[ext_resource type="Texture2D" uid="uid://c77fdbxpadltu" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/spring_.png" id="1_501n0"]
-[ext_resource type="Texture2D" uid="uid://vuu4s16h33d1" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/staticObjects_.png" id="2_gu4h0"]
-[ext_resource type="Texture2D" uid="uid://bw62dufbjb5lo" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="3_uwmb2"]
+[ext_resource type="Texture2D" uid="uid://clwseojlvno7x" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/midground_/spring_.png" id="1_501n0"]
+[ext_resource type="Texture2D" uid="uid://qar3kui46jyn" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/objects_/staticObjects_.png" id="2_gu4h0"]
+[ext_resource type="Texture2D" uid="uid://x045pefnojla" path="res://assets/fourSeasonsPlatformer_ [tileset, version 2.0] (2)/background_/sky_.png" id="3_uwmb2"]
 [ext_resource type="PackedScene" uid="uid://n6dg7dolieyi" path="res://Scenes/UI/ui.tscn" id="4_ii1ms"]
 [ext_resource type="PackedScene" uid="uid://dnkgi0ljym00y" path="res://Scenes/killzone.tscn" id="5_lk5v3"]
 [ext_resource type="PackedScene" uid="uid://cfsr8onvhk8ao" path="res://Scenes/player.tscn" id="6_bs32s"]
-[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 1/Enemigos/Slime Azul.tscn" id="6_gu4h0"]
+[ext_resource type="PackedScene" uid="uid://b1nq7skqm33wg" path="res://Scenes/Niveles/Nivel 2/Enemigos/Slime Azul.tscn" id="6_gu4h0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_roj4e"]
 texture = ExtResource("1_501n0")
@@ -625,3 +625,10 @@ position = Vector2(681, 383)
 
 [node name="Player" parent="." unique_id=1318641805 instance=ExtResource("6_bs32s")]
 position = Vector2(605, 338)
+
+[node name="Label" type="Label" parent="." unique_id=1569800140]
+offset_left = 517.0
+offset_top = 320.0
+offset_right = 576.0
+offset_bottom = 343.0
+text = "NIVEL 1"
