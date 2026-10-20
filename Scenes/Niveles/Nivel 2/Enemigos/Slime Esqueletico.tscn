@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1xn01kfoqbnj"]
 
-[ext_resource type="Script" uid="uid://du4bqc78qii2n" path="res://Scripts/Enemigos/slime_azul.gd" id="1_pbjgl"]
+[ext_resource type="Script" uid="uid://bsnhso4v1pint" path="res://Scripts/Enemigos/slime_esqueletico.gd" id="1_ahdqq"]
 [ext_resource type="Texture2D" uid="uid://3fh5b44d4fok" path="res://assets/Slimes/PNG/Slime2/Parts/Slime2_Attack_body.png" id="2_07e2d"]
 [ext_resource type="Texture2D" uid="uid://cfelvqf4dtsq0" path="res://assets/Slimes/PNG/Slime2/Parts/Slime2_Idle_body.png" id="3_in6wk"]
 [ext_resource type="Texture2D" uid="uid://dgvic7r4skub6" path="res://assets/Slimes/PNG/Slime2/Parts/Slime2_Run_body.png" id="4_535fh"]
@@ -177,7 +177,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t5w47")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack",
 "speed": 10.0
 }, {
@@ -264,7 +264,7 @@ animations = [{
 }]
 
 [node name="Slime Esqueletico" type="CharacterBody2D" unique_id=788201775]
-script = ExtResource("1_pbjgl")
+script = ExtResource("1_ahdqq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=495513748]
 position = Vector2(0, -8)
@@ -273,9 +273,8 @@ shape = SubResource("CircleShape2D_nxsiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=839891905]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ancuo")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
-frame_progress = 0.8687437
 
 [node name="Atencion Izq" type="RayCast2D" parent="." unique_id=1496956269]
 position = Vector2(0, -8)
@@ -287,8 +286,10 @@ target_position = Vector2(200, 0)
 
 [node name="Pegar Izq" type="RayCast2D" parent="." unique_id=177514608]
 position = Vector2(0, -8)
-target_position = Vector2(-31, 0)
+target_position = Vector2(-20, 0)
 
 [node name="Pegar Der" type="RayCast2D" parent="." unique_id=1077514763]
 position = Vector2(0, -8)
-target_position = Vector2(31, 0)
+target_position = Vector2(20, 0)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
