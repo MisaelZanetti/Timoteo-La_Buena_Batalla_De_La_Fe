@@ -10,7 +10,7 @@ const CHASE_SPEED = 60.0
 @onready var ray_pegar_der = $"Pegar Der"
 @onready var ray_pegar_arriba = $"Pegar Arriba"
 
-
+var atacando = false
 var direction := 1
 
 func _ready() -> void:
@@ -32,6 +32,7 @@ func _ve_al_player(ray: RayCast2D) -> bool:
 			return true
 	return false
 
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -39,17 +40,19 @@ func _physics_process(delta: float) -> void:
 	var persiguiendo = (
 		_ve_al_player(ray_cast_2d)
 		or _ve_al_player(ray_cast_2d_2)
-		)
+	)
 
 	var pegando = (
 		_ve_posible_pegar(ray_pegar_der)
 		or _ve_posible_pegar(ray_pegar_izq)
 		or _ve_posible_pegar(ray_pegar_arriba)
-		)
+	)
 
-	if pegando:
-		if sprite.animation != "Attack":
-			sprite.play("Attack")
+	if atacando:
+		velocity.x = 0
+	elif pegando:
+		atacando = true
+		sprite.play("Attack")
 	elif persiguiendo:
 		if sprite.animation != "Run":
 			sprite.play("Run")
@@ -57,14 +60,22 @@ func _physics_process(delta: float) -> void:
 		if sprite.animation != "Walk":
 			sprite.play("Walk")
 
-	if is_on_wall() and not persiguiendo:
+	if is_on_wall() and not persiguiendo and not atacando:
 		direction *= -1
 
 	sprite.flip_h = direction < 0
-	velocity.x = direction * (CHASE_SPEED if persiguiendo else SPEED)
+
+	if atacando:
+		velocity.x = 0
+	else:
+		velocity.x = direction * (CHASE_SPEED if persiguiendo else SPEED)
 
 	move_and_slide()
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		get_tree().call_deferred("reload_current_scene")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "Attack":
+		atacando = false
