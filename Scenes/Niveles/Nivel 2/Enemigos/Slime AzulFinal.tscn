@@ -281,14 +281,14 @@ target_position = Vector2(200, 0)
 
 [node name="Pegar Izq" type="RayCast2D" parent="." unique_id=177514608]
 position = Vector2(11, -12.5)
-target_position = Vector2(-99, 0)
+target_position = Vector2(-162, -0.5)
 
 [node name="Pegar Der" type="RayCast2D" parent="." unique_id=1077514763]
 position = Vector2(11, -12.5)
-target_position = Vector2(96, 0)
+target_position = Vector2(171, -0.5)
 
 [node name="Pegar Arriba" type="RayCast2D" parent="." unique_id=302355513]
 position = Vector2(11, -12.5)
-target_position = Vector2(0, -127)
+target_position = Vector2(-1, -140.5)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

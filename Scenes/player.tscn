@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c062nsvt325un" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cf40iovgt6hgh" path="res://assets/Personajes/Wizard/Attack_1.png" id="2_f1ek2"]
-[ext_resource type="AudioStream" uid="uid://cmys6dngc2ch5" path="res://MusicAndSonds/Sound/Jump.mp3" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://bunypqqkjxyu8" path="res://MusicAndSonds/Sound/Jump.mp3" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://c036b767du2y5" path="res://assets/Personajes/Wizard/Attack_2.png" id="3_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://t2dtwgmiixq0" path="res://assets/Personajes/Wizard/Attack_3.png" id="4_gymyn"]
 [ext_resource type="Texture2D" uid="uid://bh5oqaamk8h5u" path="res://assets/Personajes/Wizard/Idle.png" id="5_pu2lt"]
@@ -430,7 +430,7 @@ script = ExtResource("1_cvnsp")
 position = Vector2(0, -13.999999)
 scale = Vector2(0.39062503, 0.3906251)
 sprite_frames = SubResource("SpriteFrames_bhunq")
-animation = &"Attack1"
+animation = &"Attack3"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1922987091]
@@ -451,3 +451,7 @@ target_position = Vector2(18, 0)
 
 [node name="RayCast2D2" type="RayCast2D" parent="." unique_id=778063120]
 target_position = Vector2(-17, 0)
+
+[node name="attack" type="Area2D" parent="." unique_id=606786685]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack" unique_id=282905379]

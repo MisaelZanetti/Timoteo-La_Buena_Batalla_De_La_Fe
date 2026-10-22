@@ -9,17 +9,32 @@ const WALL_JUMP_PUSH = 140.0     # empuje horizontal, siempre alejándose de la 
 const WALL_JUMP_LOCK = 0.15      # segundos sin control horizontal tras el wall jump
 const WALL_COYOTE_TIME = 0.15    # ventana para saltar después de soltar la pared
 
+# --- Ataque ---
+const ATTACK_OFFSET = 18.5       # distancia de la hitbox al personaje (ajustala a tu sprite)
+
 var wall_lock := 0.0             # cuenta regresiva del bloqueo horizontal
 var wall_coyote := 0.0           # cuenta regresiva del coyote time
 var coyote_wall_x := 0.0         # lado de la última pared tocada (normal.x: -1 o 1)
 var last_jump_wall_x := 0.0      # pared de la que saltaste por última vez (0 = ninguna)
 var is_wall_sliding := false
+var atacando := false
 
 var coins = 0
 
 @onready var anim = $Sprite2D
 @onready var hud = get_tree().current_scene.get_node_or_null("CanvasLayer")
 @onready var jump_sound = $Jump
+@onready var attack_area = $attack
+@onready var attack_shape = $attack/CollisionShape2D
+
+
+func _ready() -> void:
+	attack_shape.set_deferred("disabled", true)   # la hitbox arranca apagada
+	_mirar(anim.flip_h)                           # hitbox alineada con hacia dónde mira el sprite
+	anim.sprite_frames.set_animation_loop("Attack1", false)
+	anim.animation_finished.connect(_on_anim_finished)
+	attack_area.body_entered.connect(_on_attack_body_entered)
+
 
 func add_coin() -> void:
 	add_coins(1)
@@ -35,6 +50,13 @@ func mostrar_versiculo(texto: String, duracion := 5.0) -> void:
 
 func rebotar(factor := 0.8) -> void:
 	velocity.y = JUMP_VELOCITY * factor
+
+
+# Gira el sprite Y la hitbox del ataque a la vez
+func _mirar(izquierda: bool) -> void:
+	anim.flip_h = izquierda
+	attack_shape.position.x = -ATTACK_OFFSET if izquierda else ATTACK_OFFSET
+
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -73,26 +95,53 @@ func _physics_process(delta: float) -> void:
 			last_jump_wall_x = coyote_wall_x
 			wall_coyote = 0.0
 			wall_lock = WALL_JUMP_LOCK
-			anim.flip_h = coyote_wall_x < 0
+			_mirar(coyote_wall_x < 0)
 			jump_sound.play()
+
+	# --- Ataque ---
+	if Input.is_action_just_pressed("ataque") and not atacando and not is_wall_sliding:
+		_atacar()
 
 	# --- Movimiento horizontal ---
 	wall_lock = max(wall_lock - delta, 0.0)
 	if wall_lock == 0.0:
 		if direction:
 			velocity.x = direction * SPEED
-			anim.flip_h = direction < 0
+			_mirar(direction < 0)
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
-	# --- Animaciones ---
+	# --- Animaciones (no se pisa la animación de ataque) ---
+	if atacando:
+		return
+
 	if is_wall_sliding:
-		anim.play("Wall-jump")
+		anim.play("Walk")
 	elif not is_on_floor() and velocity.y < 0:
 		anim.play("Jump")
 	elif direction != 0:
 		anim.play("Walk")
 	else:
 		anim.play("Idle")
+
+
+# ---------------- ATAQUE ----------------
+
+func _atacar() -> void:
+	atacando = true
+	attack_shape.set_deferred("disabled", false)   # prende la hitbox
+	anim.play("Attack1")
+
+
+func _on_anim_finished() -> void:
+	if anim.animation == "Attack1":
+		atacando = false
+		attack_shape.set_deferred("disabled", true)   # apaga la hitbox
+
+
+func _on_attack_body_entered(body: Node2D) -> void:
+	# Mata a los enemigos que tengan morir() (los que no, como el tipo B, se ignoran)
+	if body.has_method("morir"):
+		body.morir()

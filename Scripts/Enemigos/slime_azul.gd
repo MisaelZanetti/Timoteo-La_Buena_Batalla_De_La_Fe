@@ -1,34 +1,35 @@
 extends CharacterBody2D
 
 const SPEED = 20.0
-const CHASE_SPEED = 60.0
+const CHASE_SPEED = 80.0
+const COIN_SCENE = preload("res://Scenes/Coin.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var ray_cast_2d = $"Atencion Izq"
 @onready var ray_cast_2d_2 = $"Atencion Der"
 @onready var ray_pegar_izq = $"Pegar Izq"
 @onready var ray_pegar_der = $"Pegar Der"
-@onready var ray_pegar_arriba = $"Pegar Arriba"
 
-var atacando = false
+var muerto := false
+var atacando := false
 var direction := 1
 
+
 func _ready() -> void:
+	# Estas animaciones no deben repetirse, si no animation_finished nunca se emite
+	sprite.sprite_frames.set_animation_loop("Attack", false)
+	sprite.sprite_frames.set_animation_loop("Death", false)
 	sprite.play("Walk")
 
-func _ve_posible_pegar(ray: RayCast2D) -> bool:
-	if ray.is_colliding():
-		var collider = ray.get_collider()
-		if collider and collider.is_in_group("Player"):
-			direction = int(sign(ray.target_position.x))
-			return true
-	return false
 
-func _ve_al_player(ray: RayCast2D) -> bool:
+# Una sola función para todos los rayos (antes eran dos idénticas)
+func _ve_player(ray: RayCast2D) -> bool:
 	if ray.is_colliding():
 		var collider = ray.get_collider()
 		if collider and collider.is_in_group("Player"):
-			direction = int(sign(ray.target_position.x))
+			var dir_x := int(sign(ray.target_position.x))
+			if dir_x != 0:          # un rayo vertical no debe dejar direction en 0
+				direction = dir_x
 			return true
 	return false
 
@@ -38,14 +39,13 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	var persiguiendo = (
-		_ve_al_player(ray_cast_2d)
-		or _ve_al_player(ray_cast_2d_2)
+		_ve_player(ray_cast_2d)
+		or _ve_player(ray_cast_2d_2)
 	)
 
 	var pegando = (
-		_ve_posible_pegar(ray_pegar_der)
-		or _ve_posible_pegar(ray_pegar_izq)
-		or _ve_posible_pegar(ray_pegar_arriba)
+		_ve_player(ray_pegar_der)
+		or _ve_player(ray_pegar_izq)
 	)
 
 	if atacando:
@@ -72,10 +72,34 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func _on_killzone_body_entered(body: Node2D) -> void:
+	if muerto:
+		return
 	if body.is_in_group("Player"):
 		get_tree().call_deferred("reload_current_scene")
+
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "Attack":
 		atacando = false
+	elif sprite.animation == "Death":
+		_soltar_coin()
+		queue_free()
+
+
+# La llama el jugador cuando lo golpea
+func morir() -> void:
+	if muerto:
+		return
+	muerto = true
+	atacando = false
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	sprite.play("Death")
+
+
+func _soltar_coin() -> void:
+	var coin = COIN_SCENE.instantiate()
+	get_parent().call_deferred("add_child", coin)
+	coin.set_deferred("global_position", global_position + Vector2(0, -8))
