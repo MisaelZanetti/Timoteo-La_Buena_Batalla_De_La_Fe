@@ -18,14 +18,23 @@ var is_wall_sliding := false
 var coins = 0
 
 @onready var anim = $Sprite2D
-@onready var hud = get_node('/root/Map/CanvasLayer')
+@onready var hud = get_tree().current_scene.get_node_or_null("CanvasLayer")
 @onready var jump_sound = $Jump
 
+func add_coin() -> void:
+	add_coins(1)
 
-func add_coin():
-	coins += 1
-	hud.set_coins(coins)
+func add_coins(cantidad: int) -> void:
+	coins += cantidad
+	if hud:
+		hud.set_coins(coins)
 
+func mostrar_versiculo(texto: String, duracion := 5.0) -> void:
+	if hud:
+		hud.mostrar_versiculo(texto, duracion)
+
+func rebotar(factor := 0.8) -> void:
+	velocity.y = JUMP_VELOCITY * factor
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")

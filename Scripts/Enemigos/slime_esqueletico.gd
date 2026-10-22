@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 20.0
 const CHASE_SPEED = 80.0
+const COIN_SCENE = preload("res://Scenes/Coin.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var ray_cast_2d = $"Atencion Izq"
@@ -9,6 +10,7 @@ const CHASE_SPEED = 80.0
 @onready var ray_pegar_izq = $"Pegar Izq"
 @onready var ray_pegar_der = $"Pegar Der"
 
+var muerto := false
 var atacando = false
 var direction := 1
 
@@ -71,9 +73,28 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_killzone_body_entered(body: Node2D) -> void:
+	if muerto:
+		return
 	if body.is_in_group("Player"):
 		get_tree().call_deferred("reload_current_scene")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "Attack":
 		atacando = false
+	elif sprite.animation == "Death":
+		_soltar_coin()
+		queue_free()
+
+func morir() -> void:
+	if muerto:
+		return
+	muerto = true
+	atacando = false
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	sprite.play("Death")
+
+func _soltar_coin() -> void:
+	var coin = COIN_SCENE.instantiate()
+	get_parent().call_deferred("add_child", coin)
+	coin.set_deferred("global_position", global_position + Vector2(0, -8))

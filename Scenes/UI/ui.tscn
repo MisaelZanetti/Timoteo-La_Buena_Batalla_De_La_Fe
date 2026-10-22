@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bf2vv35dsod80" path="res://fonts/PressStart2P-Regular.ttf" id="3_1c2ca"]
 [ext_resource type="Texture2D" uid="uid://cdbf35w6bkq4l" path="res://assets/UI/pause.png" id="3_nf4gj"]
 [ext_resource type="Texture2D" uid="uid://c2pws825eyw0j" path="res://assets/UI/jugar-buttton.png" id="4_2246s"]
+[ext_resource type="FontFile" path="../../fonts/PressStart2P-Regular.ttf" id="7_duuxe"]
 
 [sub_resource type="Theme" id="Theme_kulhe"]
 default_font = ExtResource("3_1c2ca")
@@ -72,6 +73,26 @@ size_flags_vertical = 5
 icon = ExtResource("3_nf4gj")
 flat = true
 icon_alignment = 1
+
+[node name="PanelVersiculo" type="PanelContainer" parent="." unique_id=1149334297]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -150.0
+offset_right = -80.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PanelVersiculo" unique_id=820408203]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_duuxe")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Panel2" to="." method="_on_panel_2_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Panel" to="." method="_on_panel_pressed"]

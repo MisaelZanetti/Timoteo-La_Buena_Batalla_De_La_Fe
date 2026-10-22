@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://13k7vky45r2d"]
+
+[ext_resource type="Script" uid="uid://3ksmi63tftvi" path="res://Scripts/biblia.gd" id="1_6e2bn"]
+[ext_resource type="Texture2D" uid="uid://qk1p30mib51s" path="res://assets/biblia.png" id="1_31am8"]
+[ext_resource type="AudioStream" uid="uid://bklawgfl712s5" path="res://MusicAndSonds/Sound/Coin.mp3" id="2_6e2bn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_144q5"]
+atlas = ExtResource("1_31am8")
+region = Rect2(0, 341, 192, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0r6y"]
+atlas = ExtResource("1_31am8")
+region = Rect2(192, 341, 192, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lp4o"]
+atlas = ExtResource("1_31am8")
+region = Rect2(384, 341, 192, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2qik"]
+atlas = ExtResource("1_31am8")
+region = Rect2(576, 341, 192, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt6if"]
+atlas = ExtResource("1_31am8")
+region = Rect2(768, 341, 192, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rgnl"]
+atlas = ExtResource("1_31am8")
+region = Rect2(960, 341, 192, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j386"]
+atlas = ExtResource("1_31am8")
+region = Rect2(1152, 341, 192, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00gbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_144q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0r6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lp4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2qik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt6if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rgnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j386")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsy5g"]
+radius = 10.049875
+
+[node name="Biblia" type="Area2D" unique_id=349769381]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6e2bn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1961384393]
+scale = Vector2(0.10416666, 0.104166634)
+sprite_frames = SubResource("SpriteFrames_00gbc")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.8331699
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=877302303]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qsy5g")
+
+[node name="Sonido" type="AudioStreamPlayer2D" parent="." unique_id=184176948]
+stream = ExtResource("2_6e2bn")
