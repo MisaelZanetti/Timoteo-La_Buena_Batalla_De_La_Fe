@@ -430,16 +430,14 @@ script = ExtResource("1_cvnsp")
 position = Vector2(0, -13.999999)
 scale = Vector2(0.39062503, 0.3906251)
 sprite_frames = SubResource("SpriteFrames_bhunq")
-animation = &"Idle"
+animation = &"Attack3"
 autoplay = "Idle"
-frame_progress = 0.7052617
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1922987091]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_3jci0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=294076946]
-position = Vector2(0, -43)
 zoom = Vector2(3.5, 3.5)
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=1002173224]
@@ -447,3 +445,13 @@ position = Vector2(-17, 24)
 stream = ExtResource("3_6t5aa")
 volume_db = -10.0
 bus = &"SFX"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=769706900]
+target_position = Vector2(18, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="." unique_id=778063120]
+target_position = Vector2(-17, 0)
+
+[node name="attack" type="Area2D" parent="." unique_id=606786685]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack" unique_id=282905379]

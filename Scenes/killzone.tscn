@@ -2,15 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dd0b170qind1m" path="res://Scripts/killzone.gd" id="1_jvagm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
-size = Vector2(17276, 20)
-
 [node name="Killzone" type="Area2D" unique_id=1399434472]
 position = Vector2(912, 280)
 script = ExtResource("1_jvagm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=659619554]
-position = Vector2(467, 372)
-shape = SubResource("RectangleShape2D_bhunq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
