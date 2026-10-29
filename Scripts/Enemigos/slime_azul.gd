@@ -87,8 +87,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		_soltar_coin()
 		queue_free()
 
-
-# La llama el jugador cuando lo golpea
 func morir() -> void:
 	if muerto:
 		return
@@ -97,7 +95,6 @@ func morir() -> void:
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	sprite.play("Death")
-
 
 func _soltar_coin() -> void:
 	var coin = COIN_SCENE.instantiate()
